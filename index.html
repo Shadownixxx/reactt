@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Projekt - Eventy -parametry </title>
+    <style>
+        .pierwszy {
+            background-color: yellow;
+            width: 30vw;
+            height: 30vh;
+
+        }
+
+        .drugi {
+            border: 2px solid black;
+        }
+
+        .button-move {
+            --ml: 0px;
+
+            padding: 0.5rem 1rem;
+            transform: translate(var(--ml));
+            transition: 0.3s;
+        }
+
+        /* //////////////// */
+
+        .button-test {
+            --size: 0;
+            --left: 0;
+            --top: 0;
+
+            border: 0;
+            padding: 20px 70px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            font-family: sans-serif;
+            color: #fff;
+            overflow: hidden;
+            position: relative;
+            background-color: tomato;
+        }
+
+        .button-test span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .button-test:hover {
+            /* wielkość gradientu zwiększam na hover */
+            --size: 400px;
+        }
+
+        .button-test:after {
+            content: '';
+            position: absolute;
+            left: var(--left);
+            top: var(--top);
+            width: var(--size);
+            height: var(--size);
+            background: radial-gradient(circle closest-side, #4405f7, tomato 60%);
+            background-repeat: no-repeat;
+            transform: translate(-50%, -50%);
+            transition: 0.3s width, 0.3s height;
+            z-index: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pierwszy">bla bla bla </div>
+    <div class="div-test-replace">
+        <span>Jestem starym elementem</span>
+    </div>
+    <button type="button" class="button" id="replaceTest">Zastąp spana nowym elementem</button>
+
+    <br></br>
+    <!-- <button type="button" class="button-move">
+        Zamknij reklamę
+    </button> -->
+    <br></br>
+    <button type="button" class="button-test">
+        <span>KLIK</span>
+    </button>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
